@@ -27,3 +27,8 @@ ln python3 /usr/bin/python
 进入目录后
 python setup.py install
 
+
+docker 方案：
+
++ 获取ubuntu.tar 作为基础镜像
+
