@@ -30,5 +30,21 @@ python setup.py install
 
 docker 方案：
 
-+ 获取ubuntu.tar 作为基础镜像
++ 获取ubuntu.tar 作为基础镜像 已上传
++ 修改docker 并保存为images
+$ docker commit -m "update index.html" --author='leeyunt' 13af96130e40 leeyunt/nginx:v1
 
+
+参数-m是对创建的该镜像的一个简单描述。
+
+--author表示该镜像的作者。
+
+13af96130e40表示创建镜像所依据的容器的id。
+
+leeyunt/nginx则表示仓库名，leeyunt是名称空间，nginx是镜像名。
+
+v1表示仓库的tag。
+
+创建完成后，通过docker images命令就可以查看到刚刚创建的镜像。
+
+通过刚刚创建的镜像运行一个容器，访问该容器，发现nginx默认的首页已经发生改变。
