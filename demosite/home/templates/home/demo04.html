@@ -1,0 +1,55 @@
+<link href="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.css" rel="stylesheet">
+
+<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
+
+<div class="toolbar">
+    <div class="checkbox">
+        <label>
+            <input type="radio" name="iconSize" checked value="undefined">
+            <code>undefined</code>
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="radio" name="iconSize" value="lg">
+            <code>lg</code>
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="radio" name="iconSize" value="sm">
+            <code>sm</code>
+        </label>
+    </div>
+</div>
+
+<table
+        id="table"
+        data-toggle="table"
+        data-height="460"
+        data-show-refresh="true"
+        data-show-columns="true"
+        data-show-fullscreen="true"
+        data-search="true"
+        data-pagination="true"
+        data-url="json/data1.json">
+    <thead>
+    <tr>
+        <th data-field="id">ID</th>
+        <th data-field="name">Item Name</th>
+        <th data-field="price">Item Price</th>
+    </tr>
+    </thead>
+</table>
+
+<script>
+    var $table = $('#table')
+
+    $(function () {
+        $('.toolbar input').change(function () {
+            $table.bootstrapTable('refreshOptions', {
+                iconSize: $(this).val()
+            })
+        })
+    })
+</script>

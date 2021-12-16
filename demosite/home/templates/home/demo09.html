@@ -1,0 +1,26 @@
+<link href="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.css" rel="stylesheet">
+
+<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/extensions/toolbar/bootstrap-table-toolbar.min.js"></script>
+
+<table
+  id="table"
+  data-pagination="true"
+  data-search="true"
+  data-advanced-search="true"
+  data-id-table="advancedTable"
+  data-url="json/data1.json">
+  <thead>
+    <tr>
+      <th data-field="id" data-sortable="true">ID</th>
+      <th data-field="name" data-sortable="true">Item Name</th>
+      <th data-field="price" data-sortable="true">Item Price</th>
+    </tr>
+  </thead>
+</table>
+
+<script>
+  $(function() {
+    $('#table').bootstrapTable()
+  })
+</script>
